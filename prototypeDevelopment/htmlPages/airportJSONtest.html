@@ -1,0 +1,49 @@
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+</head>
+<body>
+	<h2>Testing Importing JSON Airport Information</h2>
+    <p>From:</p>
+    <select id="sel">
+        <option value="">-- Select Airport For Departure --</option>
+    </select>
+
+    <p>To:</p>
+    <select id="sel2">
+        <option value="">-- Select Airport For Arrival --</option>
+    </select>
+
+    <p id="from"></p>
+    <p id="to"></p>
+
+</body>
+
+<script>
+    $(document).ready(function () {
+        
+            
+        var url = "https://gist.githubusercontent.com/tdreyno/4278655/raw/7b0762c09b519f40397e4c3e100b097d861f5588/airports.json";
+
+        var code = "yes";
+
+        $.getJSON(url, function (data) {
+            $.each(data, function (index, value) {
+                // APPEND OR INSERT DATA TO SELECT ELEMENT.
+                $('#sel').append('<option value="' +  value.name + '">' + value.code + ": " +  value.name + '</option>');
+                $('#sel2').append('<option value="' +  value.name + '">' + value.code + ": " +  value.name + '</option>');
+            });
+        });
+        
+
+        // SHOW SELECTED VALUE.
+        $('#sel').change(function () {
+            $('#from').text('Departing Airport: ' + this.options[this.selectedIndex].text);
+        });
+
+        $('#sel2').change(function () {
+            $('#to').text('Arriving Airport: ' + this.options[this.selectedIndex].text);
+        });
+    });
+</script>
+</html>
