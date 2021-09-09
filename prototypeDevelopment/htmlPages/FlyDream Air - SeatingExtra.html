@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<style>
+	@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+			* {
+				box-sizing: border-box;
+				padding:0;
+				align-item: center;
+				
+				
+
+			}
+			body.scroll{}
+			body {
+				background-color: #E8E8E8;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 145vh;
+				font-family: "Lato", sans-serif;
+				margin: 0;
+				padding: 0px;
+			  
+			  
+			}
+			P {
+				font-family: "Lato", sans-serif;
+			}
+			.container {
+			  perspective: 1000px;
+			  margin-bottom: 30px;
+			  
+			  
+			  justify-content: center;
+			}
+
+			.seat {
+			  background-color: #444451;
+			  height: 26px;
+			  width: 32px;
+			  margin: 3px;
+			  font-size: 50px;
+			  border-top-left-radius: 10px;
+			  border-top-right-radius: 10px;
+			  padding: 5px;
+			  font-size: 12px;
+			  color: white;
+			  text-align: center;
+			  font-family: "Lato", sans-serif;
+			}
+
+			.seat.selected {
+			  background-color: #0370a1;
+			}
+
+			.seat.sold {
+			  background-color: #fff;
+			  color: black;
+			}
+
+			.seat:nth-of-type(3) {
+			  margin-right: 18px;
+			}
+
+			.seat:nth-last-of-type(3) {
+			  margin-left: 18px;
+			}
+
+			.seat:not(.sold):hover {
+			  cursor: pointer;
+			  transform: scale(1.2);
+			}
+
+			.showcase .seat:not(.sold):hover {
+			  cursor: default;
+			  transform: scale(1);
+			}
+
+			.showcase {
+			  background: rgba(0, 0, 0, 0.1);
+			  padding: 5px 10px;
+			  border-radius: 5px;
+			  color: #777;
+			  list-style-type: none;
+			  align-item: left;
+			  display: flex;
+			  justify-content: space-between;
+			}
+
+			.showcase li {
+			  display: flex;
+			  align-items: center;
+			  justify-content: center;
+			  margin: 0 10px;
+			}
+			.showcase li small {
+			  margin-left: 2px;
+			}
+
+			.row {
+			  display: flex;
+			}
+
+		
+
+			p.text{
+				margin: 5px 0;
+			}
+
+			p.text span{
+				color: #0370a1;
+			}
+			
+			
+			<!-------------->
+			header{
+				width: 100%; height: 100vh;
+				background-color: white;
+				background-repeat: no-repeat;
+				background-size: cover;
+				align-item: top;
+			}
+			display{
+				width: 100%; height: 20vh; 
+				background: #0370a1;
+				display: flex; 
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				font-size: 60px;
+				font-family:Harlow Solid;
+			}
+			.topnav {
+				width: 100%; height:10vh;
+				background-color: #016fa0;
+				overflow: hidden;
+			}
+
+
+			.topnav a {
+				float: left;
+				color: #f2f2f2;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+				font-size: 17px;
+				font-family: Arial;
+			}
+			
+
+
+			.topnav a:hover {
+				background-color: #4ab8e9;
+				color: white;
+			}
+
+
+			.topnav a.active {
+				background-color: #4ab8e9;
+				color: white;
+			}
+			
+			
+			.topnav b {
+				float: right;
+				color: #f2f2f2;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+				font-size: 17px;
+				font-family: Arial;
+			}
+			
+
+			.topnav b:hover {
+				background-color: #4ab8e9;
+				color: white;
+			}
+
+
+			.topnav b.active {
+				background-color: #4ab8e9;
+				color: white;
+			}
+			
+			
+			footer{
+				width: 100%; height: 20vh; 
+				background: #0370a1;
+				display: flex; 
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				font-size: 30px;
+				font-family:Harlow Solid;
+			}
+				
+				footer i:hover{
+				
+				color: grey;
+				
+				}
+				footer a:hover{
+				
+				color: grey;
+				
+				}
+				<!----------------------------->
+				table {
+					padding:15px 0px; 
+					border-collapse: collapse;
+					border-spacing: 80px 0px;
+				}
+				td{
+					width: 150px;
+					
+					padding 15px 0px;
+				}
+				
+				.buttons {
+					padding: 10px 10px;
+					border-radius: 5px;
+					color: #777;
+					list-style-type: none;
+					align-item: left;
+					display: flex;
+					justify-content: space-between;
+				}
+				.button_F{
+					font-family:Arial;
+					padding: 6px 10px;
+					border-radius: 9px;
+					background-color: #0370a1;
+					border: 2px solid #0370a1;
+					text-align: center;
+					text-decoration: none;
+					font-size: 20px;
+					transition-duration: 0.4s;
+					color: white;
+				}
+				.button_F:hover{
+					border: 2px solid #0370a1;
+					background-color: white;
+					color:#0370a1;
+				
+				}
+				
+				.smt{
+					font-size: 20px;
+					width: 180px;
+					height: 5vh;
+					font-family: "Lato", sans-serif;
+				}
+				input[type=checkbox]{
+					transform: scale(1.5);
+				}
+				.extra{
+					list-style-type: none;
+				}
+				.tt{
+					padding: 15px 0px;
+					border-spacing: 60px 0px;
+				}
+				.tb{
+					padding: 0px;
+					
+				}
+	
+	</style>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Seating and Extras</title>
+	
+  </head>
+
+	
+
+ <body>
+	<div class="topnav"><strong>
+		<a class="active" href="#home">Home</a>
+		<a href="#news">News</a>
+		<a href="#contact">Contact</a>
+		<a href="#about">About</a>
+		<a href="#More">More</a></strong>
+					
+		<b href="#Country" style="font-size:15px">&#127760; Language</b>
+		<b href="#Login">Login</b>
+		<b href="#Event">Event</b>
+		<b href="#Help">Help</b>	
+	</div>
+	<display>
+		<div style="color:white; height: 10vh;">
+			FlyDream Air
+		</div>
+	</display>
+
+	<table class="tt" cellspacing="0" border="0" >
+		<tr>
+			<td style="font-size: 20px;">
+				<h2>Flight Seating and Extras</h2>
+				<p>We offer a wide range of food and drinks, along with other in flight<br/>treats. Passengers requesting any meal packages can choose<br/>from a menu on the day of their flight.</p>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<strong style="font-size: 30px;">Seating</strong>
+			</td>
+			<td>
+				<strong style="font-size: 30px;">Extras</strong>
+			</td>
+		</tr>
+		<tr>
+			
+			<td style="text-align: center; padding: 10px">
+				<ul class="showcase">
+				  <li>
+					<div class="seat"></div>
+					<small>Available</small>
+				  </li>
+				  <li>
+					<div class="seat selected"></div>
+					<small>Selected</small>
+				  </li>
+				  <li>
+					<div class="seat sold"></div>
+					<small>Sold</small>
+				  </li>
+				</ul>
+				<div class="container">
+
+				  <div class="row">
+					<div class="seat">1A</div>
+					<div class="seat sold">1B</div>
+					<div class="seat">1C</div>
+					<div class="seat">1D</div>
+					<div class="seat">1E</div>
+					<div class="seat">1F</div>
+					<div class="seat sold">1G</div>
+					<div class="seat">1H</div>
+					<div class="seat">1J</div>
+					<div class="seat sold">1K</div>
+					
+				  </div>
+
+				  <div class="row">
+					<div class="seat">2A</div>
+					<div class="seat sold">2B</div>
+					<div class="seat">2C</div>
+					<div class="seat sold">2D</div>
+					<div class="seat">2E</div>
+					<div class="seat">2F</div>
+					<div class="seat">2G</div>
+					<div class="seat">2H</div>
+					<div class="seat sold">2J</div>
+					<div class="seat">2K</div>
+				  </div>
+				  <div class="row">
+					<div class="seat">3A</div>
+					<div class="seat sold">3B</div>
+					<div class="seat">3C</div>
+					<div class="seat">3D</div>
+					<div class="seat">3E</div>
+					<div class="seat sold">3F</div>
+					<div class="seat">3G</div>
+					<div class="seat sold">3H</div>
+					<div class="seat">3J</div>
+					<div class="seat">3K</div>
+				  </div>
+				  <div class="row">
+					<div class="seat">4A</div>
+					<div class="seat sold">4B</div>
+					<div class="seat">4C</div>
+					<div class="seat">4D</div>
+					<div class="seat sold">4E</div>
+					<div class="seat">4F</div>
+					<div class="seat">4G</div>
+					<div class="seat">4H</div>
+					<div class="seat">4J</div>
+					<div class="seat sold">4K</div>
+				  </div>
+				  <div class="row">
+					<div class="seat sold">5A</div>
+					<div class="seat">5B</div>
+					<div class="seat">5C</div>
+					<div class="seat">5D</div>
+					<div class="seat">5E</div>
+					<div class="seat">5F</div>
+					<div class="seat sold">5G</div>
+					<div class="seat">5H</div>
+					<div class="seat">5J</div>
+					<div class="seat sold">5K</div>
+				  </div>
+				  <div class="row">
+					<div class="seat sold">6A</div>
+					<div class="seat">6B</div>
+					<div class="seat">6C</div>
+					<div class="seat">6D</div>
+					<div class="seat">6E</div>
+					<div class="seat">6F</div>
+					<div class="seat">6G</div>
+					<div class="seat sold">6H</div>
+					<div class="seat">6J</div>
+					<div class="seat">6K</div>
+				  </div>
+			<br/>
+				  <div class="row">
+					<div class="seat sold">7A</div>
+					<div class="seat">7B</div>
+					<div class="seat">7C sold</div>
+					<div class="seat">7D</div>
+					<div class="seat sold">7E</div>
+					<div class="seat">7F</div>
+					<div class="seat">7G</div>
+					<div class="seat">7H</div>
+					<div class="seat sold">7J</div>
+					<div class="seat">7K</div>
+				  </div>
+				  <div class="row">
+					<div class="seat">8A</div>
+					<div class="seat">8B</div>
+					<div class="seat sold">8C</div>
+					<div class="seat sold">8D</div>
+					<div class="seat">8E</div>
+					<div class="seat">8F</div>
+					<div class="seat">8G</div>
+					<div class="seat sold">8H</div>
+					<div class="seat sold">8J</div>
+					<div class="seat">8K</div>
+				  </div>
+				  <div class="row">
+					<div class="seat sold">9A</div>
+					<div class="seat">9B</div>
+					<div class="seat">9C</div>
+					<div class="seat">9D</div>
+					<div class="seat sold">9E</div>
+					<div class="seat">9F</div>
+					<div class="seat">9G</div>
+					<div class="seat">9H</div>
+					<div class="seat sold">9J</div>
+					<div class="seat sold">9K</div>
+				  </div>
+				  <div class="row">
+					<div class="seat">10A</div>
+					<div class="seat">10B</div>
+					<div class="seat">10C</div>
+					<div class="seat sold">10D</div>
+					<div class="seat">10E</div>
+					<div class="seat sold">10F</div>
+					<div class="seat">10G</div>
+					<div class="seat">10H</div>
+					<div class="seat">10J</div>
+					<div class="seat">10K</div>
+				  </div>
+				  <div class="row">
+					<div class="seat">11A</div>
+					<div class="seat sold">11B</div>
+					<div class="seat">11C</div>
+					<div class="seat">11D</div>
+					<div class="seat">11E</div>
+					<div class="seat sold">11F</div>
+					<div class="seat">11G</div>
+					<div class="seat">11H</div>
+					<div class="seat">11J</div>
+					<div class="seat sold">11K</div>
+				  </div>
+				
+				  <div class="row">
+					<div class="seat sold">12A</div>
+					<div class="seat">12B</div>
+					<div class="seat">12C</div>
+					<div class="seat sold">12D</div>
+					<div class="seat">12E</div>
+					<div class="seat">12F</div>
+					<div class="seat">12G</div>
+					<div class="seat">12H</div>
+					<div class="seat sold">12J</div>
+					<div class="seat">12K</div>
+					
+				  </div>
+				  <br/>
+				  
+				  <div class="row">
+					<div class="seat">13A</div>
+					<div class="seat sold">13B</div>
+					<div class="seat">13C</div>
+					<div class="seat">13D</div>
+					<div class="seat">13E</div>
+					<div class="seat">13F</div>
+					<div class="seat sold">13G</div>
+					<div class="seat">13H</div>
+					<div class="seat sold">13J</div>
+					<div class="seat">13K</div>
+					
+				  </div>
+
+				  <div class="row">
+					<div class="seat sold">14A</div>
+					<div class="seat">14B</div>
+					<div class="seat sold">14C</div>
+					<div class="seat">14D</div>
+					<div class="seat">14E</div>
+					<div class="seat">14F</div>
+					<div class="seat">14G</div>
+					<div class="seat sold">14H</div>
+					<div class="seat">14J</div>
+					<div class="seat sold">14K</div>
+				  </div>
+
+				  <div class="row">
+					<div class="seat">15A</div>
+					<div class="seat sold">15B</div>
+					<div class="seat">15C</div>
+					<div class="seat">15D</div>
+					<div class="seat sold">15E</div>
+					<div class="seat">15F</div>
+					<div class="seat sold">15G</div>
+					<div class="seat">15H</div>
+					<div class="seat">15J</div>
+					<div class="seat">15K</div>
+				  </div>
+				  <div class="row">
+					<div class="seat sold">16A</div>
+					<div class="seat sold">16B</div>
+					<div class="seat">16C</div>
+					<div class="seat sold">16D</div>
+					<div class="seat">16E</div>
+					<div class="seat">16F</div>
+					<div class="seat">16G</div>
+					<div class="seat sold">16H</div>
+					<div class="seat">16J</div>
+					<div class="seat">16K</div>
+				  </div>
+				  <div class="row">
+					<div class="seat">17A</div>
+					<div class="seat">17B</div>
+					<div class="seat">17C</div>
+					<div class="seat">17D</div>
+					<div class="seat">17E</div>
+					<div class="seat sold">17F</div>
+					<div class="seat">17G</div>
+					<div class="seat sold">17H</div>
+					<div class="seat sold">17J</div>
+					<div class="seat sold">17K</div>
+				  </div>
+				  
+				  <div class="row">
+					<div class="seat">18A</div>
+					<div class="seat">18B</div>
+					<div class="seat sold">18C</div>
+					<div class="seat">18D</div>
+					<div class="seat">18E</div>
+					<div class="seat">18F</div>
+					<div class="seat sold">18G</div>
+					<div class="seat">18H</div>
+					<div class="seat">18J</div>
+					<div class="seat">18K</div>
+				  </div>
+				  
+			<br/>
+			<p class="text">
+				You have selected <span id="count">0</span> seat for a price of $<span id="total">0</span>
+			</p>
+				</div>
+				
+			</td>
+
+			<td valign= "top" style="padding: 0px; width: 600px; height: 5vh">
+				<table class="tb" border="0">
+					<form>
+					<tr>
+						<td class="smt">
+								<input name="form" type="checkbox" id="1meal" >
+								<label for="1meal" class="radio" style="font-family: 'Arial';"><Strong>1 meal</strong></label>
+						</td>
+						<td class="smt">
+								<input name="form" type="checkbox" id="snack">
+								<label for="snack" class="radio" style="font-family: 'Arial';"><Strong>Snacks</strong></label>
+						</td>
+					</tr>
+								<br />
+					<tr>
+						<td class="smt">
+								<input name="form" type="checkbox" id="2meal" >
+								<label for="2meal" class="radio" style="font-family: 'Arial';"><Strong>2 meal</strong></label>
+						</td>
+						<td class="smt">
+								<input name="form" type="checkbox" id="np">
+								<label for="np" class="radio" style="font-family: 'Arial';"><Strong>Neck pillow</strong></label>
+					
+						</td>
+					</tr>
+							<br />
+					<tr>
+						<td class="smt">
+
+							<input name="form" type="checkbox" id="3meal" >
+							<label for="3meal" class="radio" style="font-family: 'Arial';"><Strong>3 meal</strong></label>
+						</td>
+						<td class="smt">
+							<input name="form" type="checkbox" id="elS">
+							<label for="elS" class="radio" style="font-family: 'Arial';"><Strong>Extra leg space</strong></label>
+			
+						</td>
+					</tr>
+								<br />
+					<tr>
+						<td class="smt">
+							<input name="form" type="checkbox" id="drink" >
+							<label for="drink" class="radio" style="font-family: 'Arial';"><Strong>Drinks</strong></label>
+						</td>
+						<td class="smt">
+							<input name="form" type="checkbox" id="others">
+							<label for="others" class="radio" style="font-family: 'Arial';"><Strong>Others</strong></label>
+						
+						</td>
+					</tr>
+					</form>
+				</table>
+				<ul class="extra">
+					<br/><br/>
+						<li>
+							<p style="font-size: 20px;">If you have any questions regarding seating, in-flight extras, or any general enqueries, <br/> feel free to leave them below and we will get back to you as soon as possible</p>
+						</li>
+						<br/><br/>
+						<li>
+							<textarea name="query" rows="13" cols="72">
+							</textarea>
+						</li>
+				</ul>
+				<ul class="buttons">
+				  <li>
+					<input class="button_F" type = button value = "Cancel">
+				  </li>
+				  <li>
+					<input class="button_F" type = button value = "Back to flight">
+				  </li>
+				  <li>
+					<input class="button_F" type = button value = "Confirm">
+				  </li>
+				</ul>
+			</td>
+		
+		</tr>
+		
+		<tr>
+			<td>
+				<div> <br/><br/></div>
+			</td>
+			<td>
+				<div> <br/><br/><br/></div>
+			</td>
+		</tr>
+		
+	</table>
+	<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+					<i class="fa fa-facebook-official w3-hover-opacity"></i>
+					<i class="fa fa-instagram w3-hover-opacity"></i>
+					<i class="fa fa-snapchat w3-hover-opacity"></i>
+					<i class="fa fa-pinterest-p w3-hover-opacity"></i>
+					<i class="fa fa-twitter w3-hover-opacity"></i>
+					<i class="fa fa-linkedin w3-hover-opacity"></i>
+					<br/><br/>
+					<p style="font-size: 20px; color: white;"class="w3-medium">Created by <a style="color: white" href="https://www.w3schools.com/w3css/default.asp" target="_blank">Group 3</a></p>
+				</footer>
+  </body>
+  
+      <script>
+	const container = document.querySelector(".container");
+const seats = document.querySelectorAll(".row .seat:not(.sold)");
+const count = document.getElementById("count");
+const total = document.getElementById("total");
+
+
+populateUI();
+
+
+
+// Save selected movie index and price
+
+
+// Update total and count
+function updateSelectedCount() {
+  const selectedSeats = document.querySelectorAll(".row .seat.selected");
+
+  const seatsIndex = [...selectedSeats].map((seat) => [...seats].indexOf(seat));
+
+  localStorage.setItem("selectedSeats", JSON.stringify(seatsIndex));
+
+  const selectedSeatsCount = selectedSeats.length;
+
+  count.innerText = selectedSeatsCount;
+
+
+
+}
+
+
+// Get data from localstorage and populate UI
+function populateUI() {
+  const selectedSeats = JSON.parse(localStorage.getItem("selectedSeats"));
+
+  if (selectedSeats !== null && selectedSeats.length > 0) {
+    seats.forEach((seat, index) => {
+      if (selectedSeats.indexOf(index) > -1) {
+        seat.classList.add("selected");
+      }
+    });
+  }
+
+
+
+
+}
+
+
+
+// Seat click event
+container.addEventListener("click", (e) => {
+  if (
+    e.target.classList.contains("seat") &&
+    !e.target.classList.contains("sold")
+  ) {
+    e.target.classList.toggle("selected");
+
+    updateSelectedCount();
+  }
+});
+
+// Initial count and total set
+updateSelectedCount();
+	</script>
+</html>
