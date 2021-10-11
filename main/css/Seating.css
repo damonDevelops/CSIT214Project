@@ -1,0 +1,329 @@
+	@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+			* {
+				box-sizing: border-box;
+				padding:0;
+				align-item: center;
+				
+				
+
+			}
+			body.scroll{}
+			body {
+				background-color: #E8E8E8;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				height: 145vh;
+				font-family: "Lato", sans-serif;
+				margin: 0;
+				padding: 0px;
+			  
+			  
+			}
+			P {
+				font-family: "Lato", sans-serif;
+			}
+			.container {
+			  perspective: 1000px;
+			  margin-bottom: 30px;
+			  
+			  
+			  justify-content: center;
+			}
+
+			.seat {
+			  background-color: #444451;
+			  height: 26px;
+			  width: 32px;
+			  margin: 3px;
+			  font-size: 50px;
+			  border-top-left-radius: 10px;
+			  border-top-right-radius: 10px;
+			  padding: 5px;
+			  font-size: 12px;
+			  color: white;
+			  text-align: center;
+			  font-family: "Lato", sans-serif;
+			}
+
+			.seat.selected {
+			  background-color: #0370a1;
+			}
+
+			.seat.sold {
+			  background-color: #fff;
+			  color: black;
+			}
+			
+			.seat.saved {
+			  background-color: #53CAFF;
+			}
+			
+			
+			.seat:nth-of-type(3) {
+			  margin-right: 18px;
+			}
+
+			.seat:nth-last-of-type(3) {
+			  margin-left: 18px;
+			}
+
+			.seat:not(.sold):hover {
+			  cursor: pointer;
+			  transform: scale(1.2);
+			}
+
+			.showcase .seat:not(.sold):hover {
+			  cursor: default;
+			  transform: scale(1);
+			}
+			.seat.saved:hover{
+				cursor: default;
+			  	transform: scale(1);
+			}
+
+				
+			.showcase {
+			  background: rgba(0, 0, 0, 0.1);
+			  padding: 5px 10px;
+			  border-radius: 5px;
+			  color: #777;
+			  list-style-type: none;
+			  align-item: left;
+			  display: flex;
+			  justify-content: space-between;
+			}
+
+			.showcase li {
+			  display: flex;
+			  align-items: center;
+			  justify-content: center;
+			  margin: 0 10px;
+			}
+			.showcase li small {
+			  margin-left: 2px;
+			}
+
+			.row {
+			  display: flex;
+			}
+
+		
+
+			p.text{
+				margin: 5px 0;
+			}
+
+			p.text span{
+				color: #0370a1;
+			}
+			i.text{
+				margin: 5px 0;
+			}
+
+			i.text span{
+				color: #0370a1;
+			}
+			
+			<!-------------->
+			header{
+				width: 100%; height: 100vh;
+				background-color: white;
+				background-repeat: no-repeat;
+				background-size: cover;
+				align-item: top;
+			}
+			display{
+				width: 100%; height: 20vh; 
+				background: #0370a1;
+				display: flex; 
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				font-size: 60px;
+				font-family:Harlow Solid;
+			}
+			.topnav {
+				width: 100%; height:10vh;
+				background-color: #016fa0;
+				overflow: hidden;
+			}
+
+
+			.topnav a {
+				float: left;
+				color: #f2f2f2;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+				font-size: 17px;
+				font-family: Arial;
+			}
+			
+
+
+			.topnav a:hover {
+				background-color: #4ab8e9;
+				color: white;
+			}
+
+
+			.topnav a.active {
+				background-color: #4ab8e9;
+				color: white;
+			}
+			
+			
+			.topnav b {
+				float: right;
+				color: #f2f2f2;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+				font-size: 17px;
+				font-family: Arial;
+			}
+			
+
+			.topnav b:hover {
+				background-color: #4ab8e9;
+				color: white;
+			}
+
+
+			.topnav b.active {
+				background-color: #4ab8e9;
+				color: white;
+			}
+			
+			
+			footer{
+				width: 100%; height: 25vh; 
+				background: #0370a1;
+				display: flex; 
+				justify-content: center;
+				align-items: center;
+				text-align: center;
+				font-size: 30px;
+				font-family:Harlow Solid;
+				color: white;
+			}
+				
+				footer i:hover{
+				
+				color: grey;
+				
+				}
+				footer a:hover{
+				
+				color: grey;
+				
+				}
+				<!----------------------------->
+				table {
+					padding:15px 0px; 
+					border-collapse: collapse;
+					border-spacing: 80px 0px;
+				}
+				td{
+					width: 150px;
+					
+					padding 15px 0px;
+				}
+				
+				.buttons {
+					padding: 10px 10px;
+					border-radius: 5px;
+					color: #777;
+					list-style-type: none;
+					align-item: left;
+					display: flex;
+					justify-content: space-between;
+				}
+				.button_F{
+					font-family:Arial;
+					padding: 6px 10px;
+					border-radius: 9px;
+					background-color: #0370a1;
+					border: 2px solid #0370a1;
+					text-align: center;
+					text-decoration: none;
+					font-size: 20px;
+					transition-duration: 0.4s;
+					color: white;
+				}
+				.button_F:hover{
+					border: 2px solid #0370a1;
+					background-color: white;
+					color:#0370a1;
+				
+				}
+				
+				.smt{
+					font-size: 20px;
+					width: 180px;
+					height: 5vh;
+					font-family: "Lato", sans-serif;
+				}
+				input[type=checkbox]{
+					transform: scale(1.5);
+				}
+				.extra{
+					list-style-type: none;
+				}
+				.tt{
+					padding: 15px 0px;
+					border-spacing: 60px 0px;
+				}
+				.tb{
+					padding: 0px;
+					
+				}
+				.button_C{
+					font-family:Arial;
+					padding: 15px 20px;
+					border-radius: 40px;
+					background-color: #0370a1;
+					border: 2px solid #0370a1;
+					text-align: center;
+					text-decoration: none;
+					font-size: 25px;
+					transition-duration: 0.4s;
+					color: white;
+				}
+				.button_C:hover{
+					border: 2px solid #0370a1;
+					background-color: white;
+					color:#0370a1;
+			
+				}
+				.button_H{
+					font-family:Arial;
+					padding: 40px 50px;
+					border-radius: 20px;
+					background-color: #0370a1;
+					border: 2px solid #0370a1;
+					text-align: center;
+					text-decoration: none;
+					font-size: 25px;
+					transition-duration: 0.4s;
+					color: white;
+				}
+				.button_H:hover{
+					border: 2px solid #0370a1;
+					background-color: white;
+					color:#0370a1;
+				
+				}
+				
+				.dropbox {
+				font-size: 20px;
+				width: 200px;
+				}
+
+				.dateInput{
+					font-size: 20px;
+					width: 200px;
+				}
