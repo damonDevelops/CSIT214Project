@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/Seating.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Extras</title>
+	
+  </head>
+
+	
+
+ <body >
+	<div class="topnav"><strong>
+		<a class="active" href="#home">Home</a>
+		<a href="#news">News</a>
+		<a href="#contact">Contact</a>
+		<a href="#about">About</a>
+		<a href="#More">More</a></strong>
+					
+		<b href="#Country" style="font-size:15px">&#127760; Language</b>
+		<b href="#Login">Login</b>
+		<b href="#Event">Event</b>
+		<b href="#Help">Help</b>	
+	</div>
+	<display>
+		<div style="color:white; height: 10vh;">
+			FlyDream Air
+		</div>
+	</display>
+
+	<table style="height:95vh;" border="0">
+		<tr>
+			<td valign="bottom"><h1 style="font-size: 50px;">Manage In-Flight Services</h1></td>
+		</tr>
+
+		<tr>
+			<td valign="top" style="height: 15vh;">
+				<p style="font-size:20px;" >
+					Please feel free to uncheck any options that you wish </br>
+					to no longer include for your flight, or check any </br>
+					options that you wish to add on to your flight.
+				</p>
+			</td>
+		</tr>
+
+		<tr>
+			<td valign= "top" style="padding: 0px; width: 600px; height: 5vh">
+				<table class="tb" border="0">
+					<form>
+						<tr>
+							<td class="smt">
+								<div class = "tableText">Meal</b></div><br/>
+								<select id="meal", class="dropbox">
+									<option value="No meal">No meal</option>
+									<option value="1 meal">1 meal</option>
+									<option value="2 meal">2 meal</option>
+									<option value="3 meal">3 meal</option>
+								</select>
+							</td>
+							<td class="smt">
+								<div class = "tableText">Drinks</b></div><br/>
+								<select id="drink", class="dropbox">
+									<option value="Drinks">Drinks</option>
+									<option value="No Drinks">No Drinks</option>
+								</select>
+							</td>
+						</tr>
+
+						<tr>
+							<td class="smt">
+								<div class = "tableText">Snacks</b></div><br/>
+								<select id="snack", class="dropbox">
+									<option value="Snacks">Snacks</option>
+									<option value="No Snacks">No Snacks</option>
+								</select>
+							</td>
+
+							<td class="smt">
+								<div class = "tableText">Pillow</b></div><br/>
+								<select id="pillow", class="dropbox">
+									<option value="Extra Pillows">Extra Pillows</option>
+									<option value="No Pillows">No Pillows</option>
+								</select>
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="smt">
+								<div class = "tableText">leg Space</b></div><br/>
+								<select id="legS", class="dropbox">
+									<option value="Extra leg space">Extra leg space</option>
+									<option value="No leg space">No leg space</option>
+								</select>
+							</td>
+						</tr>
+					</form>
+				</table>
+
+		<tr>
+			<td>
+				<p style="font-size:30px">
+					<b style="font-size: 30px;">Please click save after change <br/>has been made</b>
+				</p>
+			</td>
+
+			<td>
+				<a href="FlyDream Air - FlightManage.htm"><input class="button_F" type = button value = "Cancel"></a>
+			</td>
+
+			<td style="padding-left:10px;">
+				<a ><button onclick="saveChange()"class="button_F">Save</button></a>
+			</td>
+		</tr>
+		</table>
+				<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+					<i class="fa fa-facebook-official w3-hover-opacity"></i>
+					<i class="fa fa-instagram w3-hover-opacity"></i>
+					<i class="fa fa-snapchat w3-hover-opacity"></i>
+					<i class="fa fa-pinterest-p w3-hover-opacity"></i>
+					<i class="fa fa-twitter w3-hover-opacity"></i>
+					<i class="fa fa-linkedin w3-hover-opacity"></i>
+					<br/><br/><p></p>
+					<p style="font-family:Harlow Solid;font-size: 20px; color: white;"class="w3-medium">Created by <a style="color: white" href="https://www.w3schools.com/w3css/default.asp" target="_blank">Group 3</a></p>
+				</footer>
+	</body>
+	
+	<script>
+	
+	
+		var userInput = localStorage.getItem("UserManage");
+		
+		var flightInfo = JSON.parse(localStorage.getItem(userInput));
+		
+		
+		document.getElementById("meal").value = flightInfo[6];
+		document.getElementById("drink").value = flightInfo[7];
+		document.getElementById("snack").value = flightInfo[8];
+		document.getElementById("pillow").value = flightInfo[9];
+		document.getElementById("legS").value = flightInfo[10];
+
+		function saveChange(){
+
+				
+			flightInfo[6] = document.getElementById("meal").value;
+			flightInfo[7] = document.getElementById("drink").value;
+			flightInfo[8] = document.getElementById("snack").value;
+			flightInfo[9] = document.getElementById("pillow").value;
+			flightInfo[10] = document.getElementById("legS").value;
+			
+			localStorage.removeItem(userInput);
+
+			localStorage.setItem(userInput, JSON.stringify(flightInfo));
+			
+			window.location.href ="FlyDream Air - FlightManage.htm"
+		
+			
+			
+			window.location.href="FlyDream Air - FlightManage.htm";
+		}
+		
+
+		
+	</script>
+</html>

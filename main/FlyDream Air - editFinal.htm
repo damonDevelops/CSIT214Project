@@ -1,0 +1,240 @@
+<html>
+	<head>
+		<title>FlyDream Air Flight Detail</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="css/main.css">
+	</head>
+
+
+	<body onload="finalPage()">
+
+		<header>
+				<div class="topnav"><strong>
+					<a class="active" href="#home">Home</a>
+					<a href="#news">News</a>
+					<a href="#contact">Contact</a>
+					<a href="#about">About</a>
+					<a href="#More">More</a></strong>
+					
+					<b href="#Country" style="font-size:15px">&#127760; Language</b>
+					<b href="#Login">Login</b>
+					<b href="#Event">Event</b>
+					<b href="#Help">Help</b>
+					
+					
+				</div>
+			<display>
+				<div style="color:white">
+					Fly Dream Air
+				</div>
+			</display>
+
+			
+			
+					
+				<table id="tableText"border="0"  style="background-color:E8E8E8; padding: 80px; border-spacing: 70px 0px; width:100%;" >
+					<tr>
+						<td>
+							<div class = "change_text"><b style=" font-size: 65px; font-family:Arial">Your Next Adventure!</b></div><br/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p style="font-size: 35px; font-family:Arial"><i>Thankyou for booking your next adventure with FlyDream Air, we can't wait to have you onboard. Please ensure to keep your booking ID number somewhere safe as you will need it in order to make any changes to your flight. Details of the flight can be seen below and accessed any time with your uniqur booking ID number</i></p><br>
+							<br />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class = "change_text"><b style=" font-size: 40px; font-family:Arial">Your Flight Information!</b></div><br/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class = "change_text"><b style=" font-size: 25px; font-family:Arial">Flight Booking Number: <a style=" font-size: 20px; font-family:Arial"id="flightN"></a></b></div><br/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class = "change_text"><b style=" font-size: 25px; font-family:Arial">Departure Airport: <a style=" font-size: 20px; font-family:Arial"id="from"></a></b></div><br/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class = "change_text"><b style=" font-size: 25px; font-family:Arial">Arrival Airport: <a style=" font-size: 20px; font-family:Arial"id="to"></a></b></div><br/>
+						</td>
+					</tr>	
+					<tr>
+						<td>
+							<div class = "change_text"><b style=" font-size: 25px; font-family:Arial">Date of Departure: <a style=" font-size: 20px; font-family:Arial"id="departDate"></a></b></div><br/>
+						</td>
+					</tr>
+					<tr>
+						<td >
+							<div><b id="returnDiv"style=" font-size: 25px; font-family:Arial">Date of Return: <a style=" font-size: 20px; font-family:Arial"id="returnDate"></a></b></div><br/></div>
+						</td>
+					</tr>	
+					<tr>
+						<td>
+							<div class = "change_text"><b style=" font-size: 25px; font-family:Arial">Seats Booked: <a style=" font-size: 20px; font-family:Arial"id="seat"></a></b></div><br/>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<div class = "change_text"><b style=" font-size: 25px; font-family:Arial">Included Extras: <a style=" font-size: 20px; font-family:Arial"id="extra"></a></b></div><br/>
+						</td>
+					</tr>						
+					<tr>
+						<td>
+							<input type="button" class="button_F" id="btn" value="Download" />
+							<br />
+							<br />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a >
+								<button onclick="home()"class="button_F" >Home</button>
+							</a>
+						</td>
+					</tr>
+					</table>
+					
+			
+			
+				<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+					<i class="fa fa-facebook-official w3-hover-opacity"></i>
+					<i class="fa fa-instagram w3-hover-opacity"></i>
+					<i class="fa fa-snapchat w3-hover-opacity"></i>
+					<i class="fa fa-pinterest-p w3-hover-opacity"></i>
+					<i class="fa fa-twitter w3-hover-opacity"></i>
+					<i class="fa fa-linkedin w3-hover-opacity"></i>
+					<br/><br/>
+					<p style="font-size: 20px;"class="w3-medium">Created by <a style="color: white" href="https://www.w3schools.com/w3css/default.asp" target="_blank">Group 3</a></p>
+				</footer>
+		</header>
+
+
+		<script>
+		
+			var userInput = localStorage.getItem("UserManage");
+		
+			var flightInfo = JSON.parse(localStorage.getItem(userInput));
+		    var flightN = flightInfo[0];
+				var from = flightInfo[1];
+				var to = flightInfo[2];
+				var departDate = flightInfo[3];
+				var returnDate = flightInfo[4];
+				var seat = flightInfo[11];
+				var selectedsSeats = flightInfo[5];
+				
+				var meal = flightInfo[6];
+				var drink = flightInfo[7];
+				var snkVal = flightInfo[8];
+				var plwVal = flightInfo[9];
+				var lsVal = flightInfo[10];
+				
+			
+			function finalPage(){
+				
+				
+				if(returnDate == null){
+				
+				document.getElementById("returnDiv").style.display = 'none';
+				document.getElementById("flightN").innerHTML = flightN;
+				document.getElementById("from").innerHTML = from;
+				document.getElementById("to").innerHTML = to;
+				document.getElementById("departDate").innerHTML = departDate;
+				document.getElementById("seat").innerHTML = seat;
+				document.getElementById("extra").innerHTML = meal +", " +drink +", "+snkVal +", "+plwVal +", "+lsVal;
+				}
+				else if(returnDate != null){
+				document.getElementById("returnDiv").style.display = 'inherit';
+				document.getElementById("flightN").innerHTML = flightN;
+				document.getElementById("from").innerHTML = from;
+				document.getElementById("to").innerHTML = to;
+				document.getElementById("departDate").innerHTML = departDate;
+				document.getElementById("returnDate").innerHTML = returnDate;
+				document.getElementById("seat").innerHTML = seat;
+				document.getElementById("extra").innerHTML = meal +", " +drink +", "+snkVal +", "+plwVal +", "+lsVal;
+				}
+				
+				
+				
+				
+			}
+			
+			function home(){
+
+			var saved = [];
+			saved[0] = flightN;
+			saved[1] = from;
+			saved[2] = to;
+			saved[3] = departDate;
+			saved[4] = returnDate;
+			saved[5] = selectedsSeats;
+			saved[6] = meal;
+			saved[7] = drink;
+			saved[8] = snkVal;
+			saved[9] = plwVal;
+			saved[10] = lsVal;
+			saved[11] = seat;
+			alert("Your Flight ID Number is "+saved[0]);
+			
+			localStorage.removeItem(userInput);
+			localStorage.removeItem("UserManage");
+			localStorage.setItem(flightN, JSON.stringify(saved));
+			
+			
+			window.location.href="FlyDream Air - Main.htm"
+			}
+            function download(filename, textInput) {
+
+                  var element = document.createElement('a');
+                  element.setAttribute('href','data:text/plain;charset=utf-8, ' + encodeURIComponent(textInput));
+                  element.setAttribute('download', filename);
+                  document.body.appendChild(element);
+                  element.click();
+                  //document.body.removeChild(element);
+            }
+            document.getElementById("btn")
+                  .addEventListener("click", function () {
+                        var filename = flightN + ".txt";
+						if(returnDate != null){
+							var text = "\n";
+							text += "==========================================================================================\n";
+							text += "|| FlyDream Air - Return Ticket\t\t\t\t\t\t\t\t\n";
+							text += "|| _______________________________________________________________________________________\n";
+							text += "|| Flight ID Number:\t" + flightN +"\t\t\t\t\t\t\t\n";
+							text += "|| Departure Airport: \t" +from+"\t\t\t\t\t\t\n";
+							text += "|| Arrival Airport: \t" + to+"\t\t\t\t\t\n";
+							text += "|| Date of Departure: \t" + departDate+"\t\t\t\t\t\t\t\n";
+							text += "|| Date of Return: \t" + returnDate+"\t\t\t\t\t\t\t\n";
+							text += "|| Seats Booked: \t" + seat+"\t\t\t\t\t\t\t\n";
+							text += "|| Included Extras: \t" + meal +", " +drink +", "+snkVal +", "+plwVal +", "+lsVal+"\t\n";
+							text += "==========================================================================================\n";
+							download(filename, text);
+						}
+						else if(returnDate == null){
+							var text = "\n";
+							text += "==========================================================================================\n";
+							text += "|| FlyDream Air - One Way Ticket\t\t\t\t\t\t\t\t\n";
+							text += "|| _______________________________________________________________________________________\n";
+							text += "|| Flight ID Number:\t" + flightN +"\t\t\t\t\t\t\t\n";
+							text += "|| Departure Airport: \t" +from+"\t\t\t\t\t\t\n";
+							text += "|| Arrival Airport: \t" + to+"\t\t\t\t\t\n";
+							text += "|| Date of Departure: \t" + departDate+"\t\t\t\t\t\t\t\n";
+							text += "|| Seats Booked: \t" + seat+"\t\t\t\t\t\t\t\n";
+							text += "|| Included Extras: \t" + meal +", " +drink +", "+snkVal +", "+plwVal +", "+lsVal+"\t\n";
+							text += "==========================================================================================\n";
+							download(filename, text);
+						}
+                  }, false);
+      </script>
+		
+	</body>
+
+	
+
+</html>
